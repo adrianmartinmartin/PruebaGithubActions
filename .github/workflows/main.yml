@@ -10,11 +10,11 @@ jobs:
     - id: set-matrix
       run: echo "matrix={\"include\":[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}" >> $GITHUB_OUTPUT
  
-  job2:
-    needs: job1
-    runs-on: ubuntu-latest
-    strategy:
-      matrix: ${{ fromJSON(needs.job1.outputs.matrix) }}
-    steps:
-      - run: build
+ job2:
+   needs: job1
+   runs-on: ubuntu-latest
+   strategy:
+     matrix: ${{ fromJSON(needs.job1.outputs.matrix) }}
+   steps:
+     - run: build
 
