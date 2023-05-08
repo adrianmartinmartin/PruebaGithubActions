@@ -3,7 +3,7 @@ name: Simple Contexts Example
 on: push
 
 jobs:
-  print info
+  print-info:
     runs on: ubuntu-latest
     steps:
       - name: Set custom environment variable
